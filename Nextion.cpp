@@ -444,3 +444,11 @@ size_t Nextion::receiveString(char *buffer, size_t len)
   buffer[pos] = '\0';
   return pos;
 }
+
+void Nextion::sendRaw(char* raw)
+{
+  if (m_flushSerialBeforeTx)
+    m_serialPort.flush();
+
+  m_serialPort.print(raw);
+}

@@ -68,6 +68,7 @@ public:
   bool receiveNumber(uint32_t *number);
   size_t receiveString(char *buffer, size_t len);
 
+  void sendRaw(char* raw);
 private:
   Stream &m_serialPort;       //!< Serial port device is attached to
   uint32_t m_timeout;         //!< Serial communication timeout in ms
